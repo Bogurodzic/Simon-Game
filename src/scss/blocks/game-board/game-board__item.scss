@@ -2,4 +2,7 @@
   width: 50%;
   height: 50%;
   background: red;
+  border: 7.5px solid black;
+
+  @extend %boxborder;
 }
