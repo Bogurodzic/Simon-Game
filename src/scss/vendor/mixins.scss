@@ -1,0 +1,14 @@
+%boxborder {
+  box-sizing: border-box;
+}
+
+%flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+%flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
