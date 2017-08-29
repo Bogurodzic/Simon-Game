@@ -1,0 +1,13 @@
+.game-board {
+  width: 100%;
+  height: 100%;
+  border-radius: 150px; 
+  flex-wrap: wrap;
+  @extend %flexcenter;
+}
+
+@import "game-board__item";
+@import "game-board__top-left.scss";
+@import "game-board__top-right.scss";
+@import "game-board__bottom-right.scss";
+@import "game-board__bottom-left.scss";
