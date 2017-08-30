@@ -24,6 +24,7 @@ function addEventsToButtons(){
 function addSimonClickEvent(button, logicValue){
   button.addEventListener("click", button => {
     logic.updateClickedSimonButtons(logicValue);
+    logic.playSimonSequence();
   });
 }
 
