@@ -23,26 +23,29 @@ let logic = {
     toClickSimonButtons = [];
   },
 
-  playSimonSequence: function(){
-    this.addNewElementToSequence()
-    this.getToClickSimonButtons().forEach(button => {
-      this.playButton(button);
-    });
+  playSimonSequence: function(value){
+    this.addNewElementToSequence(value)
+    this.playAllButtons();
   },
 
-  addNewElementToSequence: function(){
-    this.updaToClickedSimonButtons(1);
+  addNewElementToSequence: function(value){
+    this.updaToClickedSimonButtons(value);
   },
 
   updaToClickedSimonButtons: function(value){
     toClickSimonButtons.push(value);
   },
 
+  playAllButtons: function(){
+    this.getToClickSimonButtons().forEach((button, index) => {
+      setTimeout(() => {
+        this.playButton(button);
+      }, 1000*(index+1))
+    });
+  },
+
   playButton: function(button){
-    setTimeout(function(){
-      document.getElementById(String(button)).dispatchEvent(new Event('mousedown'));
-      //triggerMouseEvent(document.getElementById(String(button)), "mousedown");
-    }, 1000)
+    document.getElementById(String(button)).dispatchEvent(new Event('mousedown'));
   }
 }
 
