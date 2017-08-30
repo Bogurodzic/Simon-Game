@@ -1,3 +1,5 @@
+let howler = require("howler");
+
 var [audio1, audio2, audio3, audio4] = getAllAudio();
 
 function addEventsToButtons(){
@@ -8,14 +10,17 @@ function addEventsToButtons(){
 }
 
 function addAudioToButton(button, audio){
-  button.addEventListener("click", () => {
+  button.addEventListener("mousedown", () => {
     audio.play();
+    console.log(audio);
   });
 }
 
 function getAllAudio(){
   return getAudioUrls().map(audio => {
-    return new Audio(audio);
+    return new Howl({
+      src: [audio]
+    });
   })
 }
 
