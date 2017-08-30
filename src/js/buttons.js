@@ -1,9 +1,30 @@
+var sound = require("./sound");
+var logic = require("./logic");
+
+
 var buttons = {
+  init: function(){
+    addEventsToButtons();
+  },
+
   button1: getFirstButton(),
   button2: getSecondButton(),
   button3: getThirdButton(),
   button4: getFourthButton(),
-  getSimonButtons: getSimonButtons()
+  getSimonButtons: getSimonButtons(),
+}
+
+function addEventsToButtons(){
+  addSimonClickEvent(buttons.button1, 1);
+  addSimonClickEvent(buttons.button2, 2);
+  addSimonClickEvent(buttons.button3, 3);
+  addSimonClickEvent(buttons.button4, 4);
+}
+
+function addSimonClickEvent(button, logicValue){
+  button.addEventListener("click", button => {
+    logic.updateClickedSimonButtons(logicValue);
+  });
 }
 
 function getSimonButtons(){
