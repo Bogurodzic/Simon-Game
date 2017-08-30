@@ -12,7 +12,7 @@ let logic = {
 
   updateClickedSimonButtons: function(button){
     clickedSimonButtons.push(button);
-    console.log(clickedSimonButtons);
+    console.log("clicked", clickedSimonButtons);
   },
 
   getToClickSimonButtons: function(){
@@ -23,9 +23,14 @@ let logic = {
     toClickSimonButtons = [];
   },
 
-  playSimonSequence: function(value){
-    this.addNewElementToSequence(value)
+  playSimonSequence: function(){
+    this.addNewElementToSequence(this.getRandomNumberInRange());
+    console.log("toclick", toClickSimonButtons);
     this.playAllButtons();
+  },
+
+  getRandomNumberInRange: function(){
+    return Math.floor(Math.random() * (4 - 1 + 1)) + 1;
   },
 
   addNewElementToSequence: function(value){
