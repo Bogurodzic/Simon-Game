@@ -1,10 +1,17 @@
-let sound = {
-  init: function(){
-    console.log(audio1, audio2);
-  }
+var [audio1, audio2, audio3, audio4] = getAllAudio();
+
+function addEventsToButtons(){
+  addAudioToButton(getFirstButton(), audio1);
+  addAudioToButton(getSecondButton(), audio2);
+  addAudioToButton(getThirdButton(), audio3);
+  addAudioToButton(getFourthButton(), audio4);
 }
 
-var [audio1, audio2, audio3, audio4] = getAllAudio();
+function addAudioToButton(button, audio){
+  button.addEventListener("click", () => {
+    audio.play();
+  });
+}
 
 function getAllAudio(){
   return getAudioUrls().map(audio => {
@@ -13,7 +20,7 @@ function getAllAudio(){
 }
 
 function getAudioUrls(){
-  return ["https://s3.amazonaws.com/freecodecamp/simonSound1.mp3", "https://s3.amazonaws.com/freecodecamp/simonSound2.mp3", "https://s3.amazonaws.com/freecodecamp/simonSound3.mp3", "https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"]
+  return ["audio/simonSound1.mp3", "audio/simonSound2.mp3", "audio/simonSound3.mp3", "audio/simonSound4.mp3"]
 }
 
 function getSimonButtons(){
@@ -25,15 +32,24 @@ function getFirstButton(){
 }
 
 function getSecondButton(){
-  return document.getElementById("1");
+  return document.getElementById("2");
 }
 
 function getThirdButton(){
-  return document.getElementById("1");
+  return document.getElementById("3");
 }
 
 function getFourthButton(){
-  return document.getElementById("1");
+  return document.getElementById("4");
 }
+
+var sound = {
+  init: function(){
+    console.log(audio1, audio2);
+    addEventsToButtons();
+  }
+}
+
+
 
 module.exports = sound;
