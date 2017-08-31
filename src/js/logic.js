@@ -1,5 +1,5 @@
 let clickedSimonButtons = [];
-let toClickSimonButtons = [];
+let toClickSimonButtons = [1, 2, 3, 1];
 
 let logic = {
   resetClickedSimonButtons: function(){

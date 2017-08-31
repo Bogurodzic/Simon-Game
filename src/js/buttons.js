@@ -1,5 +1,6 @@
 var sound = require("./sound");
-var logic = require("./logic");
+//var logic = require("./logic");
+var player = require("./player");
 
 
 var buttons = {
@@ -23,8 +24,9 @@ function addEventsToButtons(){
 
 function addSimonClickEvent(button, logicValue){
   button.addEventListener("click", button => {
-    logic.updateClickedSimonButtons(logicValue);
-    logic.playSimonSequence();
+    //logic.updateClickedSimonButtons(logicValue);
+    //logic.playSimonSequence();
+    player.doMove(logicValue);
   });
 }
 
