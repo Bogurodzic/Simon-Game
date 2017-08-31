@@ -1,7 +1,15 @@
 var logic = require("./logic");
 
 var player = {
+  playerTurn: false,
+
+  togglePlayerTurn: function(){
+      this.playerTurn ? this.playerTurn = false : this.playerTurn = true;
+      console.log("now player turn is: " + this.playerTurn);
+  },
+
   doMove: function(value){
+    this.togglePlayerTurn();
     logic.updateClickedSimonButtons(value);
     this.checkPlayerMoves();
     this.checkIfItIsLastMove() ? console.log("yes") : console.log("no");
