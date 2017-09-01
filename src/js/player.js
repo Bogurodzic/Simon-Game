@@ -15,12 +15,11 @@ var player = {
     logic.updateClickedSimonButtons(value);
     this.checkPlayerMoves();
     this.checkIfItIsLastMove() ? this.endTurn() : false;
-    //console.log(logic.getClickedSimonButtons());
   },
 
   checkPlayerMoves: function(){
     logic.getClickedSimonButtons().forEach((value, index) => {
-      console.log(value, logic.getToClickSimonButtons()[index]);
+      logic.getToClickSimonButtons()[index] === logic.getClickedSimonButtons()[index] ? console.log("dobrze") : console.log("źle");
     })
   },
 
@@ -31,12 +30,9 @@ var player = {
   endTurn: function(){
     this.togglePlayerTurn();
     if(simon.newTurn() === true){
-      console.log("XD");
       this.togglePlayerTurn();
     } else{
-      console.log(";/")
     }
-    console.log("powinno sie skonczyc...")
   }
 }
 

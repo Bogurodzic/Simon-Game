@@ -12,7 +12,6 @@ let logic = {
 
   updateClickedSimonButtons: function(button){
     clickedSimonButtons.push(button);
-    console.log("clicked", clickedSimonButtons);
   },
 
   getToClickSimonButtons: function(){
