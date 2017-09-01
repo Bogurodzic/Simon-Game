@@ -48,6 +48,10 @@ let logic = {
 
   playButton: function(button){
     document.getElementById(String(button)).dispatchEvent(new Event('mousedown'));
+  },
+
+  checkIfPlayerClickedGoodButton: function(playerValue, simonValue){
+    return playerValue === simonValue ? true : false;
   }
 }
 

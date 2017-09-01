@@ -11,7 +11,6 @@ var player = {
   },
 
   doMove: function(value){
-    console.log(logic.getClickedSimonButtons())
     logic.updateClickedSimonButtons(value);
     this.checkPlayerMoves();
     this.checkIfItIsLastMove() ? this.endTurn() : false;
@@ -19,7 +18,7 @@ var player = {
 
   checkPlayerMoves: function(){
     logic.getClickedSimonButtons().forEach((value, index) => {
-      logic.getToClickSimonButtons()[index] === logic.getClickedSimonButtons()[index] ? console.log("dobrze") : console.log("źle");
+      logic.checkIfPlayerClickedGoodButton(value, logic.getToClickSimonButtons()[index]) ? true : this.repeatTurn();
     })
   },
 
@@ -31,9 +30,16 @@ var player = {
     this.togglePlayerTurn();
     if(simon.newTurn() === true){
       this.togglePlayerTurn();
-    } else{
+    }
+  },
+
+  repeatTurn: function(){
+    this.togglePlayerTurn();
+    if(simon.repeatTurn() === true){
+      this.togglePlayerTurn();
     }
   }
+
 }
 
 module.exports = player;

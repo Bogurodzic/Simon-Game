@@ -6,7 +6,12 @@ var simon = {
     logic.playAllButtons();
     console.log("New simon buttons: " + logic.getToClickSimonButtons())
     return true;
+  },
 
+  repeatTurn: function(){
+    logic.playAllButtons();
+    console.log("Old simon buttons: " + logic.getToClickSimonButtons())
+    return true;
   }
 }
 
