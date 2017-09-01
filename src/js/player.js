@@ -10,10 +10,18 @@ var player = {
       console.log("now player turn is: " + this.playerTurn);
   },
 
+  blockPlayerTurn(duration){
+    setTimeout(()=>{
+      this.togglePlayerTurn();
+    }, duration*1000);
+  },
+
   doMove: function(value){
-    logic.updateClickedSimonButtons(value);
-    this.checkPlayerMoves();
-    this.checkIfItIsLastMove() ? this.endTurn() : false;
+    if(this.playerTurn){
+      logic.updateClickedSimonButtons(value);
+      this.checkPlayerMoves();
+      this.checkIfItIsLastMove() ? this.endTurn() : false;
+    }
   },
 
   checkPlayerMoves: function(){
@@ -35,9 +43,8 @@ var player = {
 
   repeatTurn: function(){
     this.togglePlayerTurn();
-    if(simon.repeatTurn() === true){
-      this.togglePlayerTurn();
-    }
+    simon.repeatTurn()
+    this.blockPlayerTurn(logic.getToClickSimonButtons().length);
   }
 
 }

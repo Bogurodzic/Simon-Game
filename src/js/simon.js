@@ -11,7 +11,6 @@ var simon = {
   repeatTurn: function(){
     logic.playAllButtons();
     console.log("Old simon buttons: " + logic.getToClickSimonButtons())
-    return true;
   }
 }
 
