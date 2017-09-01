@@ -1,19 +1,21 @@
 var logic = require("./logic");
+var simon = require("./simon");
 
 var player = {
-  playerTurn: false,
+  playerTurn: true,
 
   togglePlayerTurn: function(){
+      logic.resetClickedSimonButtons();
       this.playerTurn ? this.playerTurn = false : this.playerTurn = true;
       console.log("now player turn is: " + this.playerTurn);
   },
 
   doMove: function(value){
-    this.togglePlayerTurn();
+    console.log(logic.getClickedSimonButtons())
     logic.updateClickedSimonButtons(value);
     this.checkPlayerMoves();
-    this.checkIfItIsLastMove() ? console.log("yes") : console.log("no");
-    console.log(logic.getClickedSimonButtons());
+    this.checkIfItIsLastMove() ? this.endTurn() : false;
+    //console.log(logic.getClickedSimonButtons());
   },
 
   checkPlayerMoves: function(){
@@ -24,6 +26,17 @@ var player = {
 
   checkIfItIsLastMove: function(){
     return logic.getClickedSimonButtons().length === logic.getToClickSimonButtons().length ? true : false;
+  },
+
+  endTurn: function(){
+    this.togglePlayerTurn();
+    if(simon.newTurn() === true){
+      console.log("XD");
+      this.togglePlayerTurn();
+    } else{
+      console.log(";/")
+    }
+    console.log("powinno sie skonczyc...")
   }
 }
 

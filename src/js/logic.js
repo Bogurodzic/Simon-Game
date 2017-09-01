@@ -1,5 +1,5 @@
 let clickedSimonButtons = [];
-let toClickSimonButtons = [1, 2, 3, 1];
+let toClickSimonButtons = [];
 
 let logic = {
   resetClickedSimonButtons: function(){
@@ -23,10 +23,8 @@ let logic = {
     toClickSimonButtons = [];
   },
 
-  playSimonSequence: function(){
+  addNewSimonSequence: function(){
     this.addNewElementToSequence(this.getRandomNumberInRange());
-    console.log("toclick", toClickSimonButtons);
-    this.playAllButtons();
   },
 
   getRandomNumberInRange: function(){

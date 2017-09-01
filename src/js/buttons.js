@@ -26,7 +26,7 @@ function addSimonClickEvent(button, logicValue){
   button.addEventListener("click", button => {
     //logic.updateClickedSimonButtons(logicValue);
     //logic.playSimonSequence();
-    player.doMove(logicValue);
+    player.playerTurn ? player.doMove(logicValue) : false;
   });
 }
 
