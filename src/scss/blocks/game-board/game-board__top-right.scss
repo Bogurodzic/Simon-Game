@@ -5,4 +5,7 @@
   &--active {
     background: lighten(#9f0f17, 30%);
   }
+  &:active {
+    background: lighten(#9f0f17, 30%);
+  }
 }
