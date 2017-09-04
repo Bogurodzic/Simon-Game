@@ -2,6 +2,7 @@ let toggleClass = require("./toggleClass")
 
 let clickedSimonButtons = [];
 let toClickSimonButtons = [];
+let counter = 0;
 
 let logic = {
   resetClickedSimonButtons: function(){
@@ -26,6 +27,10 @@ let logic = {
 
   addNewSimonSequence: function(){
     this.addNewElementToSequence(this.getRandomNumberInRange());
+  },
+
+  getCounter: function(){
+    return counter;
   },
 
   getRandomNumberInRange: function(){

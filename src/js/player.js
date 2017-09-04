@@ -34,8 +34,13 @@ var player = {
     return logic.getClickedSimonButtons().length === logic.getToClickSimonButtons().length ? true : false;
   },
 
+  refreshCounter: function(){
+    document.getElementById("counter").innerHTML = logic.getCounter();
+  },
+
   endTurn: function(){
     this.togglePlayerTurn();
+    this.refreshCounter();
     if(simon.newTurn() === true){
       this.togglePlayerTurn();
     }
