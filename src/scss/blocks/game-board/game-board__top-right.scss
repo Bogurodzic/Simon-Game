@@ -2,7 +2,7 @@
   background: #9f0f17;
   border-radius: 0px 300px 0px 279px / 213px 300px 243px 0px;
 
-  &:active {
+  &--active {
     background: lighten(#9f0f17, 30%);
   }
 }

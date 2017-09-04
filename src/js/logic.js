@@ -1,3 +1,5 @@
+let toggleClass = require("./toggleClass")
+
 let clickedSimonButtons = [];
 let toClickSimonButtons = [];
 
@@ -47,6 +49,7 @@ let logic = {
   },
 
   playButton: function(button){
+    toggleClass.toggleProvidedButton(button);
     document.getElementById(String(button)).dispatchEvent(new Event('mousedown'));
   },
 
