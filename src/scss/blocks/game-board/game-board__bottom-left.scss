@@ -1,6 +1,6 @@
 .game-board__bottom-left {
     background: #cca707;
-    border-radius: 161px 0px 0px 300px / 0px 5px 246px 300px;
+    border-bottom-left-radius: 300px;
 
     &--active {
       background: lighten(#cca707, 30%);

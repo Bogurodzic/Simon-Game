@@ -1,6 +1,7 @@
 .game-board__top-right {
   background: #9f0f17;
-  border-radius: 0px 300px 0px 279px / 213px 300px 243px 0px;
+  border-top-right-radius: 300px;
+
 
   &--active {
     background: lighten(#9f0f17, 30%);
