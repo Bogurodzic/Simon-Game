@@ -33,6 +33,14 @@ let logic = {
     return counter;
   },
 
+  addCounter: function(){
+    counter++;
+  },
+
+  resetCounter: function(){
+    counter = 0;
+  },
+
   getRandomNumberInRange: function(){
     return Math.floor(Math.random() * (4 - 1 + 1)) + 1;
   },

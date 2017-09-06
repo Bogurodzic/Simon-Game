@@ -34,13 +34,14 @@ var player = {
     return logic.getClickedSimonButtons().length === logic.getToClickSimonButtons().length ? true : false;
   },
 
-  refreshCounter: function(){
+  refreshCounter: function(activity){
+    activity === "add" ? logic.addCounter() : logic.resetCounter();
     document.getElementById("counter").innerHTML = logic.getCounter();
   },
 
   endTurn: function(){
     this.togglePlayerTurn();
-    this.refreshCounter();
+    this.refreshCounter("add");
     if(simon.newTurn() === true){
       this.togglePlayerTurn();
     }
