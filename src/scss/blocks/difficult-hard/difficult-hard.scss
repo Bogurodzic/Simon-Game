@@ -1,0 +1,8 @@
+@import "difficult-hard__text";
+@import "difficult-hard__checkbox";
+
+.difficult-hard {
+  @extend %flexcenter;
+  flex-wrap: wrap;
+  padding: 10px;
+}
