@@ -31,8 +31,8 @@ function addSimonClickEvent(button, logicValue){
 }
 
 function addCheckedClickEvents(){
-  getEasyButton().addEventListener("click", ()=>{getHardButton().checked=false});
-  getHardButton().addEventListener("click", ()=>{getEasyButton().checked=false});
+  getEasyButton().addEventListener("click", ()=>{getHardButton().checked=false; getEasyButton().checked=true});
+  getHardButton().addEventListener("click", ()=>{getEasyButton().checked=false; getHardButton().checked=true;});
 }
 
 function getSimonButtons(){
