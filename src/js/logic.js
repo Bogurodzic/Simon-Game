@@ -62,6 +62,11 @@ let logic = {
     });
   },
 
+  getDifficult: function(){
+    this.checkDifficult();
+    return easy;
+  },
+
   checkDifficult: function(){
     this.checkEasyDifficult() === true ? easy = true : easy = false;
     console.log(easy);

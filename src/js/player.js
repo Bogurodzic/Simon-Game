@@ -21,13 +21,12 @@ var player = {
       logic.updateClickedSimonButtons(value);
       this.checkPlayerMoves();
       this.checkIfItIsLastMove() ? this.endTurn() : false;
-      logic.checkDifficult();
     }
   },
 
   checkPlayerMoves: function(){
     logic.getClickedSimonButtons().forEach((value, index) => {
-      logic.checkIfPlayerClickedGoodButton(value, logic.getToClickSimonButtons()[index]) ? true : this.repeatTurn();
+      logic.checkIfPlayerClickedGoodButton(value, logic.getToClickSimonButtons()[index]) ? true : this.wrongMove();
     })
   },
 
@@ -52,6 +51,19 @@ var player = {
     this.togglePlayerTurn();
     simon.repeatTurn()
     this.blockPlayerTurn(logic.getToClickSimonButtons().length);
+  },
+
+  resetGame: function(){
+    this.togglePlayerTurn();
+    logic.resetClickedSimonButtons();
+    logic.resetToClickSimonButtons();
+    if(simon.newTurn() === true){
+      this.togglePlayerTurn();
+    }
+  },
+
+  wrongMove: function(){
+    logic.getDifficult() === true ? this.repeatTurn() : this.resetGame();
   }
 
 }
