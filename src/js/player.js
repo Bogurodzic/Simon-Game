@@ -42,9 +42,9 @@ var player = {
   endTurn: function(){
     this.togglePlayerTurn();
     this.refreshCounter("add");
-    if(simon.newTurn() === true){
-      this.togglePlayerTurn();
-    }
+    this.blockPlayerTurn(logic.getToClickSimonButtons().length + 1);
+    simon.newTurn();
+
   },
 
   repeatTurn: function(){
@@ -57,9 +57,8 @@ var player = {
     this.togglePlayerTurn();
     logic.resetClickedSimonButtons();
     logic.resetToClickSimonButtons();
-    if(simon.newTurn() === true){
-      this.togglePlayerTurn();
-    }
+    this.blockPlayerTurn(logic.getToClickSimonButtons().length + 1);
+    simon.newTurn();
   },
 
   wrongMove: function(){
