@@ -1,5 +1,14 @@
 var logic = require("./logic");
 var simon = require("./simon");
+var CountUp = require("countup.js");
+
+
+var options = {
+  useEasing: true,
+  useGrouping: true,
+  separator: ',',
+  decimal: '.',
+};
 
 var player = {
   playerTurn: true,
@@ -35,8 +44,14 @@ var player = {
   },
 
   refreshCounter: function(activity){
+    var fromCount=logic.getCounter();
+
     activity === "add" ? logic.addCounter() : logic.resetCounter();
-    document.getElementById("counter").innerHTML = logic.getCounter();
+
+    var toCount=logic.getCounter();
+
+    var counter = new CountUp("counter", fromCount, toCount, 0, 2.5, options);
+    !counter.error ? counter.start() : console.error(counter.error);
   },
 
   endTurn: function(){
@@ -57,6 +72,7 @@ var player = {
     this.togglePlayerTurn();
     logic.resetClickedSimonButtons();
     logic.resetToClickSimonButtons();
+    this.refreshCounter("reset");
     this.blockPlayerTurn(logic.getToClickSimonButtons().length + 1);
     simon.newTurn();
   },
