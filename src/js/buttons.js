@@ -20,6 +20,7 @@ function addEventsToButtons(){
   addSimonClickEvent(buttons.button2, 2);
   addSimonClickEvent(buttons.button3, 3);
   addSimonClickEvent(buttons.button4, 4);
+  addCheckedClickEvents();
 }
 
 function addSimonClickEvent(button, logicValue){
@@ -27,6 +28,11 @@ function addSimonClickEvent(button, logicValue){
     toggleClass.toggleProvidedButton(logicValue);
     player.playerTurn ? player.doMove(logicValue) : false;
   });
+}
+
+function addCheckedClickEvents(){
+  getEasyButton().addEventListener("click", ()=>{getHardButton().checked=false});
+  getHardButton().addEventListener("click", ()=>{getEasyButton().checked=false});
 }
 
 function getSimonButtons(){
