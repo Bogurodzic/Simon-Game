@@ -49,4 +49,12 @@ function getFourthButton(){
   return document.getElementById("4");
 }
 
+function getEasyButton(){
+  return document.getElementById("easy");
+}
+
+function getHardButton(){
+  return document.getElementById("hard");
+}
+
 module.exports = buttons;

@@ -21,6 +21,7 @@ var player = {
       logic.updateClickedSimonButtons(value);
       this.checkPlayerMoves();
       this.checkIfItIsLastMove() ? this.endTurn() : false;
+      logic.checkDifficult();
     }
   },
 

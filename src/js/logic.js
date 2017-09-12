@@ -3,6 +3,7 @@ let toggleClass = require("./toggleClass")
 let clickedSimonButtons = [];
 let toClickSimonButtons = [];
 let counter = 0;
+let easy = true;
 
 let logic = {
   resetClickedSimonButtons: function(){
@@ -59,6 +60,19 @@ let logic = {
         this.playButton(button);
       }, 1000*(index+1))
     });
+  },
+
+  checkDifficult: function(){
+    this.checkEasyDifficult() === true ? easy = true : easy = false;
+    console.log(easy);
+  },
+
+  checkEasyDifficult: function(){
+    return this.getEasyButton().checked;
+  },
+
+  getEasyButton: function(){
+    return document.getElementById("easy");
   },
 
   playButton: function(button){
