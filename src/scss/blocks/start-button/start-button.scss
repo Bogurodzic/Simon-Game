@@ -1,32 +1,25 @@
 
 .start-button {
-  width: 120px;
-  height: 30px;
+  display:block;
   margin: 0 auto;
-  margin-top: 30px;
-
-	-moz-box-shadow:inset 0px 34px 0px -15px #CC0000;
-	-webkit-box-shadow:inset 0px 34px 0px -15px #CC0000;
-	box-shadow:inset 0px 34px 0px -15px #CC0000;
-	background-color:#CC0000;
-	border:1px solid #241d13;
-
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-
-	text-decoration:none;
-	text-shadow:0px -1px 0px #7a2a1d;
-
-  cursor:pointer;
-
-  @extend %flexcenter;
+  width:50px;
+  height:50px;
+  line-height:50px;
+  border: 2px solid #f5f5f5;
+  border-radius: 50%;
+  color:#f5f5f5;
+  text-align:center;
+  text-decoration:none;
+  background: #464646;
+  box-shadow: 0 0 3px gray;
+  font-size:10px;
+  font-weight:bold;
 }
 .start-button:hover {
 	background-color:#CC0010;
 }
 .start-button:active {
 	position:relative;
-	top:1px;
+	top:3px;
+  right: 3px;
 }
