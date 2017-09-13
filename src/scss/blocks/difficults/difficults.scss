@@ -1,12 +1,7 @@
 .difficults {
   @extend %flexcenter;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
   margin-top: 5px;
-
+  width: 45%;
   background: rgba(0,0,0,1);
   border: 1px solid #F4A460;
 }

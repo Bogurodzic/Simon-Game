@@ -1,7 +1,6 @@
 .counter {
+  @extend %flexcenter;
   text-align: center;
   font-size: 24px;
-
-
-  margin: 45px 0;
+  width: 45%;
 }
