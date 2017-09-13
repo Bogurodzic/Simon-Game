@@ -20,7 +20,6 @@ function addEventsToButtons(){
   addSimonClickEvent(buttons.button2, 2);
   addSimonClickEvent(buttons.button3, 3);
   addSimonClickEvent(buttons.button4, 4);
-  addCheckedClickEvents();
 }
 
 function addSimonClickEvent(button, logicValue){
@@ -28,11 +27,6 @@ function addSimonClickEvent(button, logicValue){
     toggleClass.toggleProvidedButton(logicValue);
     player.playerTurn ? player.doMove(logicValue) : false;
   });
-}
-
-function addCheckedClickEvents(){
-  getEasyButton().addEventListener("click", ()=>{getHardButton().checked=false; getEasyButton().checked=true});
-  getHardButton().addEventListener("click", ()=>{getEasyButton().checked=false; getHardButton().checked=true;});
 }
 
 function getSimonButtons(){
@@ -53,14 +47,6 @@ function getThirdButton(){
 
 function getFourthButton(){
   return document.getElementById("4");
-}
-
-function getEasyButton(){
-  return document.getElementById("easy");
-}
-
-function getHardButton(){
-  return document.getElementById("hard");
 }
 
 module.exports = buttons;

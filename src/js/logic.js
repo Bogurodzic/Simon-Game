@@ -68,7 +68,7 @@ let logic = {
   },
 
   checkDifficult: function(){
-    this.checkEasyDifficult() === true ? easy = true : easy = false;
+    this.checkEasyDifficult() === true ? easy = false : easy = true;
     console.log(easy);
   },
 
@@ -77,7 +77,7 @@ let logic = {
   },
 
   getEasyButton: function(){
-    return document.getElementById("easy");
+    return document.getElementById("difficult");
   },
 
   playButton: function(button){
