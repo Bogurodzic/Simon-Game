@@ -1,8 +1,0 @@
-@import "difficult-easy__text";
-@import "difficult-easy__checkbox";
-
-.difficult-easy {
-  @extend %flexcenter;
-  flex-wrap: wrap;
-  padding: 10px;
-}
