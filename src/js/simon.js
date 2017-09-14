@@ -8,9 +8,21 @@ var simon = {
     return true;
   },
 
+  startGame: function(){
+    this.resetGame();
+    this.newTurn();
+    return true;
+  },
+
   repeatTurn: function(){
     logic.playAllButtons();
     console.log("Old simon buttons: " + logic.getToClickSimonButtons())
+  },
+
+  resetGame: function(){
+    logic.resetClickedSimonButtons();
+    logic.resetToClickSimonButtons();
+    document.getElementById("counter").innterHTML = 0;
   }
 }
 
