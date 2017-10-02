@@ -8,4 +8,15 @@
 @import "blocks/options-game/options-game";
 @import "blocks/difficults-texts/difficults-texts";
 
- 
+
+
+body {
+  background: url("../img/polygon-4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
