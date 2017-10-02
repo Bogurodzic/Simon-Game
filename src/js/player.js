@@ -58,6 +58,7 @@ var player = {
     this.togglePlayerTurn();
     this.refreshCounter("add");
     this.blockPlayerTurn(logic.getToClickSimonButtons().length + 1);
+    logic.checkWin();
     simon.newTurn();
 
   },

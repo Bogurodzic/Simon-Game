@@ -4,6 +4,7 @@ let clickedSimonButtons = [];
 let toClickSimonButtons = [];
 let counter = 0;
 let easy = true;
+let win = 5;
 
 let logic = {
   resetClickedSimonButtons: function(){
@@ -87,6 +88,10 @@ let logic = {
 
   checkIfPlayerClickedGoodButton: function(playerValue, simonValue){
     return playerValue === simonValue ? true : false;
+  },
+
+  checkWin: function(){
+    this.getToClickSimonButtons().length === win ? console.log("win") : console.log("not win");
   }
 }
 
