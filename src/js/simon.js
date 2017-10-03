@@ -1,4 +1,5 @@
 var logic = require("./logic");
+var winModule = require("./win");
 
 var simon = {
   newTurn: function(){
@@ -20,6 +21,7 @@ var simon = {
   },
 
   resetGame: function(){
+    winModule.hide();
     logic.resetClickedSimonButtons();
     logic.resetToClickSimonButtons();
     document.getElementById("counter").innterHTML = 0;

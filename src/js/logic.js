@@ -1,10 +1,11 @@
-let toggleClass = require("./toggleClass")
+let toggleClass = require("./toggleClass");
+let winModule = require("./win");
 
 let clickedSimonButtons = [];
 let toClickSimonButtons = [];
 let counter = 0;
 let easy = true;
-let win = 5;
+let win = 2;
 
 let logic = {
   resetClickedSimonButtons: function(){
@@ -91,7 +92,11 @@ let logic = {
   },
 
   checkWin: function(){
-    this.getToClickSimonButtons().length === win ? console.log("win") : console.log("not win");
+    return this.getToClickSimonButtons().length === win ? true : false;
+  },
+
+  winInit: function(){
+    winModule.show();
   }
 }
 
