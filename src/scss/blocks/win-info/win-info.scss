@@ -1,0 +1,12 @@
+.win-info {
+  text-align: center;
+  color: red;
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-family: 'Geo', sans-serif;
+  opacity: 0;
+}
+
+.win-info--visible {
+  @include animation(0s, 3s, "show");
+}
