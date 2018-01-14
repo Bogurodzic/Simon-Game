@@ -2,7 +2,7 @@
 
 This is one of freecodecamp project.
 
-Soon - Live version: [[link]](http://kamiljarzab.pl/Projekty/Simon-Game/)
+Soon - Live version: [[link]](http://kamil.webheroes.io/Projekty/Simon/)
 
 
 ## Site functionality
